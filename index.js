@@ -5,6 +5,8 @@ const router = require('./main/routes/routes')
 
 app.set('view engine', 'ejs');
 
+//middelwares
+
 app.use(router)
 
 app. listen(port, () => {
