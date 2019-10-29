@@ -1,7 +1,7 @@
 let product = [
     {
         idProduct: 1,
-        tipeUser: '1',
+        product_owner : '1',
         name : 'cargador',
         price : '200',
         descriptcion : 'quick charge'
@@ -9,7 +9,7 @@ let product = [
 
     {
         idProduct: 2,
-        tipeUser: 2,
+        product_owner : '1',
         name : 'celular',
         price : '500',
         descriptcion : 'Xiaomi'
@@ -17,12 +17,11 @@ let product = [
 
     {
         idProduct: 3,
-        tipeUser: 2,
+        product_owner : '2',
         name : 'laptop',
         price : '2500',
         descriptcion : 'asus'
     },
-
 
 ]
 
