@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>home</title>
+</head>
+
+<body>
+    <div id="App">
+        <!--ESTO ES DEL NAV-->
+        <div class="nav">
+            <div class="nav-container">
+
+                <div class="nav-contain">
+                    <div class="logo-container">
+                        <div class="logo-contain">
+                            API PRODUCT
+                        </div>
+                    </div>
+                </div>
+                <div class="user">
+                    <button v-on:click="popupActive()">Seleccionar usuario</button>
+                 
+                </div>
+            </div>
+        </div>
+        <!--ESTO ES DEL CUERPO DEL DOC-->
+        <%
+        data.forEach(function(product) {
+        %>
+        
+        <div class="product">
+            <div class="product-container">
+                <div class="product-contain">
+                    <p hidden>id: <%=  product._id %></p>
+                    <p>nombre: <%= product.name %></p>
+                    <p>precio: <%= product.price %></p>
+                    <p>descripción: <%= product.description %></p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <%
+    })
+  %>
+
+        <!--ESTO ES DEL POPUP-->
+        <div class="popupInsertWord">
+            <div class="popupInsertWord-content">
+                <div class="popup-alert" v-show="popup" v-on:click="popupActive()">
+                    <div class="about">
+                        <div class="popup">
+                            <div class="popup-container" v-on:click="propagation">
+                                <form @submit="getOwner" method="GET" >
+                                <!-- <form  method="POST" action="productOwner" > -->
+                                    <div class="popup-contain">
+                                        <h1>Productos por Cliente</h1>
+                                        <input type="text" placeholder="Ingrese id del owner" name="owner" />
+                                        <button type="submit" >CONSULTAR PRODUCTOS</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
